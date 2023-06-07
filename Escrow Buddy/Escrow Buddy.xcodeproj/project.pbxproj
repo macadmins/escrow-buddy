@@ -1,0 +1,355 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C97037C229ECA0D90078F153 /* Invoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97037C129ECA0D90078F153 /* Invoke.swift */; };
+		C9C59E2D29EC67D8004C874F /* EBAuthPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C59E2C29EC67D8004C874F /* EBAuthPlugin.m */; };
+		C9C59E3329EC8FE4004C874F /* EBMechanism.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C59E3229EC8FE4004C874F /* EBMechanism.swift */; };
+		C9EC6C1A2A2674FB00C5D8A9 /* AuthDBSetup.sh in Resources */ = {isa = PBXBuildFile; fileRef = C9EC6C182A26743800C5D8A9 /* AuthDBSetup.sh */; };
+		C9EC6C1C2A268B0900C5D8A9 /* AuthDBTeardown.sh in Resources */ = {isa = PBXBuildFile; fileRef = C9EC6C1B2A268B0900C5D8A9 /* AuthDBTeardown.sh */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C97037C129ECA0D90078F153 /* Invoke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invoke.swift; sourceTree = "<group>"; };
+		C9C59E2429EC6785004C874F /* Escrow Buddy.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Escrow Buddy.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9C59E2B29EC67D8004C874F /* EBAuthPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EBAuthPlugin.h; sourceTree = "<group>"; };
+		C9C59E2C29EC67D8004C874F /* EBAuthPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EBAuthPlugin.m; sourceTree = "<group>"; };
+		C9C59E2F29EC8C61004C874F /* Escrow Buddy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Escrow Buddy-Bridging-Header.h"; sourceTree = "<group>"; };
+		C9C59E3229EC8FE4004C874F /* EBMechanism.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBMechanism.swift; sourceTree = "<group>"; };
+		C9EC6C182A26743800C5D8A9 /* AuthDBSetup.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = AuthDBSetup.sh; sourceTree = "<group>"; };
+		C9EC6C1B2A268B0900C5D8A9 /* AuthDBTeardown.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = AuthDBTeardown.sh; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C9C59E2129EC6785004C874F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C9C59E1B29EC6785004C874F = {
+			isa = PBXGroup;
+			children = (
+				C9C59E2B29EC67D8004C874F /* EBAuthPlugin.h */,
+				C9C59E2C29EC67D8004C874F /* EBAuthPlugin.m */,
+				C9C59E2F29EC8C61004C874F /* Escrow Buddy-Bridging-Header.h */,
+				C9C59E3429EC8FEA004C874F /* Mechanisms */,
+				C9EC6C192A26745000C5D8A9 /* Utility */,
+				C9C59E2529EC6785004C874F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C9C59E2529EC6785004C874F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9C59E2429EC6785004C874F /* Escrow Buddy.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9C59E3429EC8FEA004C874F /* Mechanisms */ = {
+			isa = PBXGroup;
+			children = (
+				C9C59E3229EC8FE4004C874F /* EBMechanism.swift */,
+				C97037C129ECA0D90078F153 /* Invoke.swift */,
+			);
+			path = Mechanisms;
+			sourceTree = "<group>";
+		};
+		C9EC6C192A26745000C5D8A9 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				C9EC6C182A26743800C5D8A9 /* AuthDBSetup.sh */,
+				C9EC6C1B2A268B0900C5D8A9 /* AuthDBTeardown.sh */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C9C59E2329EC6785004C874F /* Escrow Buddy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9C59E2829EC6785004C874F /* Build configuration list for PBXNativeTarget "Escrow Buddy" */;
+			buildPhases = (
+				C9C59E2029EC6785004C874F /* Sources */,
+				C9C59E2129EC6785004C874F /* Frameworks */,
+				C9C59E2229EC6785004C874F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Escrow Buddy";
+			productName = "Escrow Buddy";
+			productReference = C9C59E2429EC6785004C874F /* Escrow Buddy.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9C59E1C29EC6785004C874F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					C9C59E2329EC6785004C874F = {
+						CreatedOnToolsVersion = 14.3;
+						LastSwiftMigration = 1430;
+					};
+				};
+			};
+			buildConfigurationList = C9C59E1F29EC6785004C874F /* Build configuration list for PBXProject "Escrow Buddy" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C9C59E1B29EC6785004C874F;
+			productRefGroup = C9C59E2529EC6785004C874F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C9C59E2329EC6785004C874F /* Escrow Buddy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C9C59E2229EC6785004C874F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9EC6C1C2A268B0900C5D8A9 /* AuthDBTeardown.sh in Resources */,
+				C9EC6C1A2A2674FB00C5D8A9 /* AuthDBSetup.sh in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C9C59E2029EC6785004C874F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9C59E2D29EC67D8004C874F /* EBAuthPlugin.m in Sources */,
+				C9C59E3329EC8FE4004C874F /* EBMechanism.swift in Sources */,
+				C97037C229ECA0D90078F153 /* Invoke.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C9C59E2629EC6785004C874F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--timestamp";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C9C59E2729EC6785004C874F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--timestamp";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		C9C59E2929EC6785004C874F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application: Netflix, Inc. (EZ4M4LKSQP)";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = EZ4M4LKSQP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Security/SecurityAgentPlugins";
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MARKETING_VERSION = 1.0.0;
+				OTHER_CODE_SIGN_FLAGS = "--timestamp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.netflix.Escrow-Buddy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Escrow Buddy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		C9C59E2A29EC6785004C874F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application: Netflix, Inc. (EZ4M4LKSQP)";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = EZ4M4LKSQP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Security/SecurityAgentPlugins";
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MARKETING_VERSION = 1.0.0;
+				OTHER_CODE_SIGN_FLAGS = "--timestamp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.netflix.Escrow-Buddy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Escrow Buddy-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C9C59E1F29EC6785004C874F /* Build configuration list for PBXProject "Escrow Buddy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9C59E2629EC6785004C874F /* Debug */,
+				C9C59E2729EC6785004C874F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9C59E2829EC6785004C874F /* Build configuration list for PBXNativeTarget "Escrow Buddy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9C59E2929EC6785004C874F /* Debug */,
+				C9C59E2A29EC6785004C874F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C9C59E1C29EC6785004C874F /* Project object */;
+}

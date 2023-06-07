@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Xcode
+*.mode1v3
+*.mode2v3
+*.pbxuser
+*.perspectivev3
+*.xccheckout
+*.xcuserstate
+DerivedData
+project.xcworkspace/
+xcuserdata/
+
+# Builds
+*.o
+*.pkg
+*.pyc
+build/
