@@ -1,6 +1,4 @@
-# Escrow Buddy
-
-<p style="text-align: center;"><img src="images/escrow_buddy.png" alt="Escrow Buddy"></p>
+# ![Escrow Buddy](images/escrow_buddy_logo_300px.png)
 
 **Escrow Buddy is a macOS authorization plugin that allows MDM administrators to generate and escrow new FileVault personal recovery keys on Macs that lack a valid escrowed key in MDM.**
 
