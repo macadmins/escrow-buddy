@@ -1,4 +1,4 @@
-name: Package Escrow Buddy for pull requests
+name: Package pull requests
 
 on:
   pull_request_target:
