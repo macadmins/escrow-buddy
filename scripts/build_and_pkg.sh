@@ -23,10 +23,7 @@
 set -e
 
 cd "$(dirname "$0")"
-xcodebuild -project "../Escrow Buddy/Escrow Buddy.xcodeproj" clean build -configuration Release
-
-# Name of pkg signing certificate in keychain. (Default to unsigned.)
-CERTNAME="$1"
+xcodebuild -project "../Escrow Buddy/Escrow Buddy.xcodeproj" clean build analyze -configuration Release
 
 echo "Determining version..."
 VERSION=$(defaults read "$(pwd)/../Escrow Buddy/build/Release/Escrow Buddy.bundle/Contents/Info.plist" CFBundleShortVersionString)
@@ -42,14 +39,12 @@ cp -vR "../Escrow Buddy/build/Release/Escrow Buddy.bundle" "$PKGROOT/Library/Sec
 
 echo "Building package..."
 OUTFILE="$OUTPUTDIR/Escrow Buddy-$VERSION.pkg"
-pkgbuild --root "$PKGROOT" --identifier com.netflix.Escrow-Buddy --version "$VERSION" "$OUTFILE" --scripts pkg
-
-if [[ -n $CERTNAME ]]; then
-    echo "Signing package..."
-    productsign --sign "$CERTNAME" "$OUTFILE" "${OUTFILE/.pkg/-signed.pkg}"
-    mv "${OUTFILE/.pkg/-signed.pkg}" "$OUTFILE"
-fi
+pkgbuild --root "$PKGROOT" \
+    --identifier com.netflix.Escrow-Buddy \
+    --version "$VERSION" \
+    --scripts pkg \
+    "$OUTFILE"
 
 echo "Done."
 echo "$OUTFILE"
-open "$OUTPUTDIR"
+# open "$OUTPUTDIR"
