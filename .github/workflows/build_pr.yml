@@ -1,0 +1,78 @@
+name: Package Escrow Buddy for pull requests
+
+on:
+  pull_request_target:
+    types: [labeled]
+
+jobs:
+  build:
+    name: Xcode build and analyze
+    runs-on: macos-13
+    if: contains(github.event.pull_request.labels.*.name, 'buildable')
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install app signing certificates
+        uses: apple-actions/import-codesign-certs@8f3fb608891dd2244cdab3d69cd68c0d37a7fe93 # v2.0.0
+        with:
+          keychain-password: ${{ github.run_id }}
+          p12-file-base64: ${{ secrets.APP_CERTIFICATES_P12_MAOS }}
+          p12-password: ${{ secrets.APP_CERTIFICATES_P12_PASSWORD_MAOS }}
+
+      - name: Install package signing certificates
+        uses: apple-actions/import-codesign-certs@8f3fb608891dd2244cdab3d69cd68c0d37a7fe93 # v2.0.0
+        with:
+          create-keychain: false # do not create a new keychain for this value
+          keychain-password: ${{ github.run_id }}
+          p12-file-base64: ${{ secrets.PKG_CERTIFICATES_P12_MAOS }}
+          p12-password: ${{ secrets.PKG_CERTIFICATES_P12_PASSWORD_MAOS }}
+
+      - name: Build and analyze bundle
+        run: |
+          xcodebuild -project "Escrow Buddy/Escrow Buddy.xcodeproj" clean build analyze -configuration Release
+
+      - name: Set environment variables
+        id: set_env_var
+        run: |
+          echo "VERSION=$(/usr/libexec/PlistBuddy -c "Print:CFBundleShortVersionString" "Escrow Buddy/build/Release/Escrow Buddy.bundle/Contents/Info.plist")" >> $GITHUB_ENV
+
+      - name: Build installer package
+        run: |
+          PKGROOT=$(mktemp -d /tmp/Escrow-Buddy-build-root-XXXXXXXXXXX)
+          mkdir -p "$PKGROOT/Library/Security/SecurityAgentPlugins"
+          cp -R "Escrow Buddy/build/Release/Escrow Buddy.bundle" "$PKGROOT/Library/Security/SecurityAgentPlugins/Escrow Buddy.bundle"
+          pkgbuild --root "$PKGROOT" \
+            --identifier com.netflix.Escrow-Buddy \
+            --version "${{ env.VERSION }}" \
+            --scripts scripts/pkg \
+            "Escrow Buddy/build/Escrow Buddy-${{ env.VERSION }}-unsigned.pkg"
+
+      - name: Sign package
+        run: |
+          productsign --sign "Developer ID Installer: Mac Admins Open Source (T4SK8ZXCXG)" \
+            "Escrow Buddy/build/Escrow Buddy-${{ env.VERSION }}-unsigned.pkg" "Escrow Buddy/build/Escrow Buddy-${{ env.VERSION }}-signed.pkg"
+
+      - name: Notarize package
+        run: |
+          XCODE_PATH="/Applications/Xcode_14.2.app"
+          "$XCODE_PATH/Contents/Developer/usr/bin/notarytool" store-credentials \
+            --apple-id "opensource@macadmins.io" \
+            --team-id "T4SK8ZXCXG" \
+            --password "${{ secrets.NOTARY_APP_PASSWORD_MAOS }}" \
+            default
+          "$XCODE_PATH/Contents/Developer/usr/bin/notarytool" submit \
+            "Escrow Buddy/build/Escrow Buddy-${{ env.VERSION }}-signed.pkg" \
+            --keychain-profile "default" \
+            --wait
+          "$XCODE_PATH/Contents/Developer/usr/bin/stapler" staple \
+            "Escrow Buddy/build/Escrow Buddy-${{ env.VERSION }}-signed.pkg"
+          mkdir -p artifacts
+          /bin/mv "Escrow Buddy/build/Escrow Buddy-${{ env.VERSION }}-signed.pkg" "artifacts/Escrow Buddy-${{ env.VERSION }}.pkg"
+
+      - name: Upload packages
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
+        with:
+          name: artifacts
+          path: artifacts/
