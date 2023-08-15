@@ -4,6 +4,8 @@
 
 For more context around the problem of missing FileVault keys in MDM and Escrow Buddy's origin, see [this post on the Netflix Tech Blog](https://netflixtechblog.com/escrow-buddy-an-open-source-tool-from-netflix-for-remediation-of-missing-filevault-keys-in-mdm-815aef5107cd).
 
+If you've successfully deployed Escrow Buddy, we'd love to know the details in [this brief survey](https://forms.gle/cRY3t2cRwZMQtGbb8). Thank you!
+
 ---
 
 ## Requirements
@@ -58,6 +60,10 @@ For a faster and more focused response, be sure to provide the following in your
 ## Contribution
 
 Contributions are welcome! To contribute, [create a fork](https://github.com/macadmins/escrow-buddy/fork) of this repository, commit and push changes to a branch of your fork, and then submit a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request). Your changes will be reviewed by a project maintainer.
+
+Contributions don't have to be code; we appreciate any help maintaining our [wiki](https://github.com/macadmins/escrow-buddy/wiki) or answering [issues](https://github.com/macadmins/escrow-buddy/issues).
+
+Also, if you've successfully deployed Escrow Buddy at your organization, please consider submitting [our brief survey](https://forms.gle/cRY3t2cRwZMQtGbb8) for measuring the project's community impact.
 
 ---
 
