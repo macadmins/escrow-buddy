@@ -3,12 +3,12 @@ name: Package merges to main
 on:
   push:
     branches:
-    - main
+      - main
     paths-ignore:
-    - '.github/**'
-    - 'images/**'
-    - '**/CHANGELOG.md'
-    - '**/README.md'
+      - ".github/**"
+      - "images/**"
+      - "**/CHANGELOG.md"
+      - "**/README.md"
 
 jobs:
   build:
