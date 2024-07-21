@@ -49,10 +49,11 @@ jobs:
             --scripts scripts/pkg \
             "Escrow Buddy/build/Escrow Buddy-${{ env.VERSION }}-unsigned.pkg"
 
-      - name: Sign package
+      - name: Create signed distribution package
         run: |
-          productsign --sign "Developer ID Installer: Mac Admins Open Source (T4SK8ZXCXG)" \
-            "Escrow Buddy/build/Escrow Buddy-${{ env.VERSION }}-unsigned.pkg" "Escrow Buddy/build/Escrow Buddy-${{ env.VERSION }}-signed.pkg"
+          productbuild --sign "Developer ID Installer: Mac Admins Open Source (T4SK8ZXCXG)" \
+            --package "Escrow Buddy/build/Escrow Buddy-${{ env.VERSION }}-unsigned.pkg" \
+            "Escrow Buddy/build/Escrow Buddy-${{ env.VERSION }}-signed.pkg"
 
       - name: Notarize package
         run: |
