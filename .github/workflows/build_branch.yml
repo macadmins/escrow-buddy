@@ -1,4 +1,4 @@
-name: Package pull requests
+name: Package specific branch
 
 on:
   push:
@@ -9,7 +9,6 @@ jobs:
   build:
     name: Xcode build and analyze
     runs-on: macos-13
-    if: contains(github.event.pull_request.labels.*.name, 'buildable')
 
     steps:
       - name: Checkout
