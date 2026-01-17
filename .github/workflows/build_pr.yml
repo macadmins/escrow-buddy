@@ -7,12 +7,12 @@ on:
 jobs:
   build:
     name: Xcode build and analyze
-    runs-on: macos-13
+    runs-on: macos-15
     if: contains(github.event.pull_request.labels.*.name, 'buildable')
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install app signing certificates
         uses: apple-actions/import-codesign-certs@8f3fb608891dd2244cdab3d69cd68c0d37a7fe93 # v2.0.0
@@ -56,7 +56,7 @@ jobs:
 
       - name: Notarize package
         run: |
-          XCODE_PATH="/Applications/Xcode_14.2.app"
+          XCODE_PATH="/Applications/Xcode_16.1.app"
           "$XCODE_PATH/Contents/Developer/usr/bin/notarytool" store-credentials \
             --apple-id "opensource@macadmins.io" \
             --team-id "T4SK8ZXCXG" \
