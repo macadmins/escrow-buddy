@@ -1,0 +1,15 @@
+name: "Reusable"
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - edited
+
+jobs:
+  verify:
+    name: "Verify"
+    uses: Inetum-Poland/.github/.github/workflows/verify_semantic_pr.yml@main
+    secrets: inherit

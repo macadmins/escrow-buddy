@@ -1,0 +1,63 @@
+---
+# https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-githubs-form-schema
+
+name: Feature Request
+description: File a feature request so we better understand how to implement it.
+title: "feat(<scope>): <title>"
+labels: ["feature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to file a feature request.
+        Please fill out the following information about the feature you are requesting.
+        Also please make sure that the `<scope>` and `<title>` in the title are correct.
+        If you are not sure about anything, please ask @Inetum-Poland/devops-admins or @aamkye.
+
+  # Context
+  - type: textarea
+    id: context-feature
+    attributes:
+      label: Context
+      description: Provide "Big Picture" for the feature.
+      placeholder: Provide background, goals, or any relevant information that helps understand the feature.
+    validations:
+      required: true
+
+  # Why
+  - type: textarea
+    id: why-feature
+    attributes:
+      label: Why is this feature needed?
+      description: Explain the problem and why it is a feature.
+      placeholder: I need to be able to do X because Y
+    validations:
+      required: true
+
+  # What
+  - type: textarea
+    id: what-feature
+    attributes:
+      label: What will this feature do?
+      description: Please explain what will this feature do.
+      placeholder: Ex. supervision, sending messages, texter profiles.
+    validations:
+      required: true
+
+  # Who
+  - type: textarea
+    id: who-feature
+    attributes:
+      label: Who will this feature benefit?
+      description: Please explain who will this feature benefit.
+      placeholder: Ex. All supervisors, Sally Supervisor, Level 1 CCs.
+    validations:
+      required: true
+
+
+  # Other Comments
+  - type: textarea
+    id: other-comments
+    attributes:
+      label: Other Comments / Logs
+      description: Please explain anything else that you think is relevant.

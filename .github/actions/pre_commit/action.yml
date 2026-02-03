@@ -1,0 +1,10 @@
+name: "Pre-Commit"
+description: "Pre-Commit Exec"
+
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      run: |
+        pre-commit run --show-diff-on-failure --color=always --all-files
+        pre-commit run --show-diff-on-failure --color=always --all-files --hook-stage=manual

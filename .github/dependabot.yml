@@ -8,5 +8,10 @@ updates:
       time: "09:00"
       timezone: "Europe/Warsaw"
     labels:
-      - "gha"
+      - "github_actions"
       - "dependencies"
+    ignore:
+      - dependency-name: "github.com/Inetum-Poland/*"
+        update-types:
+          - "version-update:semver-minor"
+          - "version-update:semver-patch"

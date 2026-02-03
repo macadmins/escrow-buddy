@@ -1,10 +1,10 @@
 [tools]
 pre-commit      = 'latest'
-python          = '3.12'
+python          = '3.12.12'
 trufflehog      = 'latest'
 
 [plugins]
 trufflehog = 'https://github.com/Inetum-Poland/asdf-trufflehog.git'
 
 [settings]
-not_found_auto_install            = true
+not_found_auto_install = true

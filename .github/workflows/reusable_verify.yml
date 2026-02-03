@@ -1,0 +1,15 @@
+name: "Reusable"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  verify:
+    name: "Verify"
+    uses: Inetum-Poland/.github/.github/workflows/verify.yml@main
+    secrets: inherit

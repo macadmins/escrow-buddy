@@ -1,0 +1,7 @@
+name: 'Install Prerequisites'
+description: 'Installs common prerequisites for workflows'
+runs:
+  using: 'composite'
+  steps:
+    - shell: bash
+      run: sudo apt update && sudo apt install -y --no-install-recommends git unzip curl make

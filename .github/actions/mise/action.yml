@@ -4,11 +4,14 @@ description: "Mise Installer"
 runs:
   using: "composite"
   steps:
-    - shell: bash
+    - uses: jdx/mise-action@main
+      with:
+        install: true
+        cache: true
+        cache_save: true
+        cache_key: "mise-{{platform}}-{{file_hash}}"
+
+    - name: Mise upgrade latest
+      shell: bash
       run: |
-        sudo apt update
-        sudo apt install -y jq curl git bash
-        curl https://mise.run | sh
-        echo "$HOME/.local/bin" >> $GITHUB_PATH
-        echo "$HOME/.local/share/mise/shims" >> $GITHUB_PATH
-        mise install
+        mise up

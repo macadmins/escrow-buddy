@@ -1,0 +1,31 @@
+---
+# https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-githubs-form-schema
+
+name: Simple Request
+description: File a simple request so we better understand what is needed
+title: "<type>(<scope>): <title>"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to file a request.
+        Please fill out the following information about the thing you are requesting.
+        Also please make sure that the `<type>`, `<scope>` and `<title>` in the title are correct.
+        If you are not sure about anything, please ask @Inetum-Poland/devops-admins or @aamkye.
+
+  # Context
+  - type: textarea
+    id: context-feature
+    attributes:
+      label: Context
+      description: Provide "Big Picture" for the feature.
+      placeholder: Provide background, goals, or any relevant information that helps understand the feature.
+    validations:
+      required: true
+
+  # Other Comments
+  - type: textarea
+    id: other-comments
+    attributes:
+      label: Other Comments / Logs
+      description: Please explain anything else that you think is relevant.

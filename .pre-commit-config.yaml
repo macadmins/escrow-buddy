@@ -1,60 +1,61 @@
 ---
-# https://github.com/antonbabenko/pre-commit-terraform
-# brew install pre-commit terraform-docs tflint tfsec trivy checkov terrascan infracost tfupdate minamijoyo/hcledit/hcledit jq
-
+# https://github.com/trufflesecurity/trufflehog
+# https://github.com/compilerla/conventional-pre-commit
 # https://github.com/pre-commit/pre-commit-hooks
 # https://github.com/python-jsonschema/check-jsonschema/
-
-# https://github.com/trufflesecurity/trufflehog
 
 fail_fast: true
 
 repos:
-- repo: local
-  hooks:
-    - id: trufflehog
-      name: Check TruffleHog
-      entry: bash -c 'trufflehog git file://. --since-commit HEAD --only-verified --fail --no-update'
-      language: system
-      stages: ["pre-commit", "push"]
+  - repo: local
+    hooks:
+      - id: trufflehog
+        name: Check TruffleHog
+        entry: bash -c 'trufflehog git file://. --since-commit HEAD --only-verified --fail --no-update'
+        language: system
+        stages: ["pre-commit", "push"]
 
-- repo: https://github.com/compilerla/conventional-pre-commit
-  rev: v3.4.0
-  hooks:
-    - id: conventional-pre-commit
-      name: Check Conventional Commit
-      stages: [commit-msg]
-      args: [--strict, --force-scope]
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v4.3.0
+    hooks:
+      - id: conventional-pre-commit
+        name: Check Conventional Commit
+        stages: [commit-msg]
+        args: [--strict, --force-scope]
 
-- repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.6.0
-  hooks:
-    - id: check-yaml
-      name: Check YAML
-      stages: [pre-commit]
-    - id: end-of-file-fixer
-      name: Check End of Files
-      stages: [pre-commit]
-    - id: trailing-whitespace
-      name: Check Trailing Whitespace
-      stages: [pre-commit]
-      args: [
-        --markdown-linebreak-ext=md
-      ]
-    - id: check-merge-conflict
-      name: Check for Merge Conflicts
-      stages: [pre-commit]
-    - id: detect-private-key
-      name: Check Private Keys
-      stages: [pre-commit]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-yaml
+        name: Check YAML
+        stages: [pre-commit]
 
-- repo: https://github.com/python-jsonschema/check-jsonschema
-  rev: 0.29.1
-  hooks:
-    # - id: check-github-actions
-    #   name: Check GitHub Actions
-    #   args: ["--verbose"]
-    - id: check-github-workflows
-      name: Check GitHub Workflows
-      stages: [pre-commit]
-      args: ["--verbose"]
+      - id: mixed-line-ending
+        name: Check Mixed Line Endings
+        stages: [pre-commit]
+        args: [--fix=lf]
+
+      - id: end-of-file-fixer
+        name: Check End of Files
+        stages: [pre-commit]
+
+      - id: trailing-whitespace
+        name: Check Trailing Whitespace
+        stages: [pre-commit]
+        args: [--markdown-linebreak-ext=md]
+
+      - id: check-merge-conflict
+        name: Check for Merge Conflicts
+        stages: [pre-commit]
+
+      - id: detect-private-key
+        name: Check Private Keys
+        stages: [pre-commit]
+
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.36.1
+    hooks:
+      - id: check-github-workflows
+        name: Check GitHub Workflows
+        stages: [pre-commit]
+        args: ["--verbose"]

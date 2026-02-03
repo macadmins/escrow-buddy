@@ -1,0 +1,12 @@
+# https://github.com/trufflesecurity/trufflehog?tab=readme-ov-file#octocat-trufflehog-github-action
+name: "TruffleHog"
+description: "Secret Scanning"
+
+runs:
+  using: "composite"
+  steps:
+    - name: TruffleHog
+      uses: trufflesecurity/trufflehog@main
+      with:
+        head: ${{ github.head_ref || github.ref_name }}
+        extra_args: --only-verified

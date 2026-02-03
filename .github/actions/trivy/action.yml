@@ -1,0 +1,15 @@
+# https://github.com/aquasecurity/trivy-action
+name: "Trivy"
+description: "Vurnerability Scanning"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Run Trivy vulnerability scanner in fs mode
+      uses: aquasecurity/trivy-action@0.33.1
+      with:
+        scan-type: "fs"
+        scan-ref: "."
+        ignore-unfixed: true
+        format: "table"
+        severity: "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL"
